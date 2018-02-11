@@ -1,0 +1,76 @@
+﻿<contact-form></contact-form>
+
+<signup-form></signup-form>
+
+
+<h1>
+  {{title}}
+</h1>
+<courses></courses>
+
+<img [src]="imageUrl" />
+<button (click)="onClick()"></button>
+<favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange()"></favorite>
+<!--NGIF-->
+<!--<div *ngIf="courses.length > 0">List of Courses</div>
+<div *ngIf="courses.length == 0">
+  No courses yet
+</div>-->
+
+<div *ngIf="courses.length > 0" ;then coursesList else noCourses></div>
+<ng-template #coursesList>
+  List
+</ng-template>
+<ng-template #noCourses>
+  No courses yet
+</ng-template>
+
+<!--Hidden attribute-->
+<div [hidden]="courses.length > 0">List</div>
+<div [hidden]="courses.length == 0"> No courses yet</div>
+
+<!--NG Switch Case-->
+
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode=='map'"><a (click)="viewMode ='map'" href="">Map View </a></li>
+  <li [class.active]="viewMode=='list'"><a (click)="viewMode ='list'" href="">List View </a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>OtherWise</div>
+</div>
+
+<!--NG FOR-->
+<button (click)="onAdd()"></button>
+<ul>
+  <li *ngFor="let course of coursesObj; index as i">
+    {{i}} - {{ course.name}}
+    <button (click)="onRemove(course)"></button>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of coursesObj; even as isEven">{{ course.name}} <span *ngIf="isEven">(EVEN)</span></li>
+</ul>
+
+
+<!--NG FOR trackby-->
+<button (click)="loadCourses()">LoadCourses</button>
+<ul>
+  <li *ngFor="let course of coursesObj ;trackBy: trackCourses ">     {{ course.name}}     </li>
+</ul>
+<!--NG CLASS-->
+<span [ngClass]="{
+'vmi': isSelected,
+'masVmi': !isSelected
+}"></span>
+
+<!--NG STYLE-->
+
+<button [ngStyle]="{
+        'backgroundColor': canSave ? 'blue': grey,
+        'color': canSave ? 'blue': black,
+        }">
+  SAVE
+</button>

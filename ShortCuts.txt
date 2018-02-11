@@ -1,0 +1,61 @@
+ng new firebase-demo
+
+ng g c course
+ng g s email.service
+
+npm install bootstrap --save
+
+
+npm install angular2-jwt --save
+
+
+compiler: node_modules/.bin/ngc
+
+ng build --prod
+
+ng serve --prod
+
+ng lint
+
+ng lint --fix
+
+npm i -g angular-cli-ghpages
+
+ng build --prod --base-href="https://mosh-hamedani.github.io/followers-app/"   <- deploy gh pages ahhoz kell
+angular-cli-ghpages --no-silent vagy ngh --no-silent
+
+h automata legyen package jsonba kell belerakni ekkor elég npm run deploy:gh
+
+
+npm install i -g firebase-tools
+
+firebase login
+firebase init
+
+ng build --prod
+
+firebase deploy
+
+heroku cli ->weboldal
+
+heroku --version
+
+heroku login
+
+
+heroku create 
+
+heroku open
+
+npm i express --save
+
+heroku create 
+
+npm install firebase angularfire2 --save
+
+
+npm install --save web-animations-js
+
+15 Angular Material:
+
+npm i --save @angular/cdk @angular/material @angular/animations hammerjs

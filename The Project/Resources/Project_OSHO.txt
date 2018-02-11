@@ -1,0 +1,20 @@
+Project
+
+
+1: firebase ->environment
+
+npm i --save firebase@4.2.0 angularfire2@4.0.0-rc.1
+
+npm i --save bootstrap
+npm i --save bootstrap@next
+
+npm install --save @ng-bootstrap/ng-bootstrap
+
+npm i g firebase-tools
+
+firebase login
+firebase init
+
+ng build --prod
+
+firebase deploy
